@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PASSAGE — Project Page</title>
+  <meta name="description" content="PASSAGE: Scaling Scene-Aligned Motion Learning for Perceptive Humanoid Traversal in Cluttered Environments.">
+  <!-- Inline favicon: zero extra network request. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%233366cc'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Arial'%3EPA%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css?v=21">
+  <!-- Signals script availability: the poster fade-in only starts hidden
+       when JS is guaranteed to reveal it. -->
+  <script>document.documentElement.classList.add('js')</script>
+  <!-- Critical fonts (78KB total, self-hosted latin subsets). -->
+  <link rel="preload" href="assets/fonts/sora-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body>
+
+<main class="page">
+
+  <!-- ══════════════════ Title / Authors / Links ══════════════════ -->
+  <header class="header">
+    <h1 class="title"><span class="title__brand">PASSAGE:</span> Scaling
+      Scene-Aligned Motion Learning for Perceptive Humanoid Traversal in
+      Cluttered Environments</h1>
+    <!-- TODO: paper subtitle / venue -->
+    <p class="subtitle">Conference submission, 2026</p>
+
+    <p class="authors">
+      <span class="author">Yuxuan&nbsp;Ma<sup>1,*</sup></span>,
+      <span class="author">Zicheng&nbsp;Zeng<sup>1,2,3,*</sup></span>,
+      <span class="author">Chunlin&nbsp;Peng<sup>1,4,5,*</sup></span>,
+      <span class="author">Zhoujian&nbsp;Li<sup>1,6</sup></span>,
+      <span class="author">Zetong&nbsp;Zhao<sup>1,7</sup></span>,
+      <span class="author">Zhikai&nbsp;Zhang<sup>1,7</sup></span>,
+      <span class="author">Yunrui&nbsp;Lian<sup>1,7</sup></span>,
+      <span class="author">Han&nbsp;Xue<sup>1,7</sup></span>,
+      <span class="author">Sikai&nbsp;Liang<sup>1,7</sup></span>,
+      <span class="author">Weiyi&nbsp;Zhu<sup>1</sup></span>,
+      <span class="author">Mulin&nbsp;Chen<sup>1,7</sup></span>,
+      <span class="author">Chenghuai&nbsp;Lin<sup>1</sup></span>,
+      <span class="author">Jiayu&nbsp;Zeng<sup>1</sup></span>,
+      <span class="author">Yanwei&nbsp;An<sup>1</sup></span>,
+      <span class="author">Songan&nbsp;Zhang<sup>5</sup></span>,
+      <span class="author">Jiayuan&nbsp;Gu<sup>3</sup></span>,
+      <span class="author">Jilong&nbsp;Wang<sup>1</sup></span>,
+      <span class="author">Jingbo&nbsp;Wang<sup>1</sup></span>,
+      <span class="author">He&nbsp;Wang<sup>1,8</sup></span>,
+      and <span class="author">Li&nbsp;Yi<sup>1,2,7,&dagger;</sup></span>
+    </p>
+    <p class="affiliations">
+      <span><sup>1</sup>Galbot</span>&ensp;·&ensp;
+      <span><sup>2</sup>Shanghai Qi Zhi Institute</span>&ensp;·&ensp;
+      <span><sup>3</sup>ShanghaiTech University</span>&ensp;·&ensp;
+      <span><sup>4</sup>Zhongguancun Academy</span><br>
+      <span><sup>5</sup>Shanghai Jiao Tong University</span>&ensp;·&ensp;
+      <span><sup>6</sup>National University of Singapore</span>&ensp;·&ensp;
+      <span><sup>7</sup>Tsinghua University</span>&ensp;·&ensp;
+      <span><sup>8</sup>Peking University</span><br>
+      <span><sup>*</sup>Equal contribution</span>&ensp;·&ensp;
+      <span><sup>&dagger;</sup>Corresponding author</span>
+    </p>
+
+    <!-- TODO: fill hrefs; drop buttons that do not apply -->
+    <nav class="links">
+      <a class="btn" href="https://arxiv.org/abs/0000.00000" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        arXiv</a>
+      <a class="btn" href="https://github.com/GalaxyGeneralRobotics/PASSAGE" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.14v3.17c0 .31.2.68.8.56A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+        GitHub</a>
+      <a class="btn" href="#bibtex">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        BibTeX</a>
+      <a class="btn" href="#main-video">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+        Video</a>
+    </nav>
+  </header>
+
+  <!-- ══════════════════ Main video ══════════════════ -->
+  <section id="main-video" class="section">
+    <!-- TODO: hero video — export to assets/videos/main.mp4 (H.264 ≤8Mbps) and
+         a poster frame assets/images/main_poster.webp (~1600px wide, quality 70).
+         Nothing is fetched until the user clicks play. -->
+    <div class="facade facade--video facade--wide"
+         data-facade="video" data-src="assets/videos/main.mp4?v=4"
+         data-fallback="Main video — material pending (assets/videos/main.mp4)">
+      <img src="assets/images/main_poster.webp" alt="Main video poster"
+           width="1280" height="720" loading="eager" decoding="async"
+           fetchpriority="high"
+           onerror="this.closest('.facade').classList.add('is-missing')">
+      <button class="facade__play" type="button" aria-label="Play video">&#9654;</button>
+      <span class="facade__tag">Main video &middot; 3:00</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════ Abstract ══════════════════ -->
+  <section class="section section--abstract">
+    <h2>Abstract</h2>
+    <p class="body-text">
+      We present PASSAGE, a perception-conditioned planner&ndash;tracker framework
+      for humanoid traversal. Using virtual reality and inertial motion capture, we collect
+      100&nbsp;h of scene-aligned human motion across 1,500 cluttered scenes. A
+      conditional flow-matching planner generates short-horizon references from
+      motion history, a local destination, and a robot-centric multi-layer
+      elevation map, while a perceptive whole-body tracker executes them at
+      50&nbsp;Hz with geometric feedback. Real-time chunking promotes
+      inter-chunk consistency, and planner-side RL post-training under the
+      frozen tracker further improves closed-loop performance. Without skill
+      annotations or obstacle-specific policies, one planner&ndash;tracker pair
+      selects and composes traversal behaviors across unseen geometries. In
+      simulation, component ablations quantify the contribution of each stage.
+      Across three independent training seeds, scaling captured data from 6 to
+      100&nbsp;h increases mean contact-free success from 48.1% to 68.9% on
+      held-out scenes, while the final model with validated scene augmentation
+      reaches 70.3%. The fully onboard system integrates egocentric 3D LiDAR
+      perception, online occupancy mapping, 6.25-Hz planning, and 50-Hz control
+      on a Jetson AGX Orin; tests across 50 unseen physical layouts demonstrate
+      traversal without prebuilt maps or offboard computation.
+    </p>
+  </section>
+
+  <!-- ══════════════════ Long-horizon office rollout ══════════════════ -->
+  <section id="long-horizon-office-rollout" class="section">
+    <h2>Long Horizon Office Rollout</h2>
+    <div class="facade facade--video facade--wide" data-facade="video"
+         data-src="assets/videos/real_longpath.mp4?v=2"
+         data-fallback="Long-horizon office rollout — material pending">
+      <img src="assets/images/real_longpath_poster.webp"
+           alt="Long-horizon humanoid rollout through a cluttered office"
+           width="1280" height="720" loading="lazy" decoding="async"
+           onerror="this.closest('.facade').classList.add('is-missing')">
+      <button class="facade__play" type="button" aria-label="Play long-horizon office rollout">&#9654;</button>
+      <span class="facade__tag">Office rollout &middot; 0:39</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════ Method overview ══════════════════ -->
+  <section id="method" class="section">
+    <h2>Method</h2>
+
+    <figure class="figure">
+      <img src="assets/images/PASSAGE_publish.webp"
+           alt="PASSAGE system overview: motion-in-scene dataset, multilayer elevation map, flow-matching motion generation, motion tracking and real-world deployment"
+           width="3600" height="2025" loading="lazy" decoding="async"
+           onerror="this.closest('figure').classList.add('is-missing')">
+      <figcaption>Figure 1 — System overview.</figcaption>
+    </figure>
+
+    <h3 class="subhead method-results__title">Quantitative Results</h3>
+
+    <figure class="figure figure--table">
+      <img src="assets/images/Figs/ExpTable.webp"
+           alt="Quantitative comparison across held-out scenes; the final PASSAGE model reaches 98.67 percent success and 70.27 percent contact-free success"
+           width="2216" height="768" loading="lazy" decoding="async"
+           onerror="this.closest('figure').classList.add('is-missing')">
+    </figure>
+
+    <div class="results-figure-grid">
+      <figure class="figure">
+        <img src="assets/images/Figs/1.webp"
+             alt="Real-world evaluation results across physical obstacle layouts"
+             width="1564" height="780" loading="lazy" decoding="async"
+             onerror="this.closest('figure').classList.add('is-missing')">
+        <figcaption>Physical-layout evaluation.</figcaption>
+      </figure>
+
+      <figure class="figure">
+        <img src="assets/images/Figs/ScalingCurve.webp"
+             alt="Contact-free success increases from 48.1 percent with 6 hours of captured data to 68.9 percent with 100 hours"
+             width="1042" height="694" loading="lazy" decoding="async"
+             onerror="this.closest('figure').classList.add('is-missing')">
+        <figcaption>Performance with increasing data scale.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ══════════════════ Data collection ══════════════════ -->
+  <section id="data-collection" class="section">
+    <h2>Data Collection</h2>
+
+    <article class="clip-card clip-card--wide">
+      <div class="facade facade--video facade--cinema" data-facade="video"
+           data-src="assets/videos/datacollection.mp4?v=2"
+           data-fallback="Data Collection video unavailable">
+        <img src="assets/images/datacollection_poster.webp"
+             alt="Scene-aligned data collection shown across egocentric, simulation and real-world views"
+             width="1600" height="708" loading="lazy" decoding="async"
+             onerror="this.closest('.facade').classList.add('is-missing')">
+        <button class="facade__play" type="button" aria-label="Play Data Collection video">&#9654;</button>
+      </div>
+      <div class="clip-card__meta">
+        <span class="clip-card__title">Scene-aligned motion capture</span>
+        <span class="clip-card__duration">0:21</span>
+      </div>
+    </article>
+  </section>
+
+  <!-- ══════════════════ Evaluation ══════════════════ -->
+  <section id="evaluation" class="section">
+    <h2>Evaluation</h2>
+
+    <div class="media-group" data-carousel>
+      <div class="media-group__head">
+        <h3 class="subhead">ClutterRollout</h3>
+        <div class="carousel-nav" aria-label="Clutter Rollout carousel controls">
+          <button type="button" data-carousel-prev aria-label="Scroll Clutter Rollout videos left" disabled>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m12.5 4-6 6 6 6"/></svg>
+          </button>
+          <button type="button" data-carousel-next aria-label="Scroll Clutter Rollout videos right" disabled>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7.5 4 6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="media-rail media-rail--pair" data-carousel-track tabindex="0"
+           aria-label="Clutter Rollout videos">
+        <article class="clip-card">
+          <div class="facade facade--video facade--wide" data-facade="video"
+               data-src="assets/videos/ClutterRollout/ClutterRollout.mp4?v=2"
+               data-fallback="Clutter Rollout video unavailable">
+            <img src="assets/images/clutter_rollout_poster.webp"
+                 alt="Humanoid traversing a densely cluttered office course"
+                 width="1280" height="720" loading="lazy" decoding="async"
+                 onerror="this.closest('.facade').classList.add('is-missing')">
+            <button class="facade__play" type="button" aria-label="Play multi-obstacle rollout">&#9654;</button>
+          </div>
+          <div class="clip-card__meta">
+            <span class="clip-card__title">Multi-obstacle course</span>
+            <span class="clip-card__duration">0:24</span>
+          </div>
+        </article>
+
+        <article class="clip-card">
+          <div class="facade facade--video facade--wide" data-facade="video"
+               data-src="assets/videos/ClutterRollout/OneClutter.mp4?v=2"
+               data-fallback="Single-layout rollout video unavailable">
+            <img src="assets/images/one_clutter_poster.webp"
+                 alt="Humanoid traversing a single cluttered office layout"
+                 width="1280" height="720" loading="lazy" decoding="async"
+                 onerror="this.closest('.facade').classList.add('is-missing')">
+            <button class="facade__play" type="button" aria-label="Play single-layout rollout">&#9654;</button>
+          </div>
+          <div class="clip-card__meta">
+            <span class="clip-card__title">Single clutter layout</span>
+            <span class="clip-card__duration">0:08</span>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="media-group" data-carousel>
+      <div class="media-group__head">
+        <h3 class="subhead">Single Skill</h3>
+        <div class="carousel-nav" aria-label="Single Skill carousel controls">
+          <button type="button" data-carousel-prev aria-label="Scroll Single Skill videos left" disabled>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m12.5 4-6 6 6 6"/></svg>
+          </button>
+          <button type="button" data-carousel-next aria-label="Scroll Single Skill videos right" disabled>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7.5 4 6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="media-rail" data-carousel-track tabindex="0"
+           aria-label="Single Skill videos">
+        <article class="clip-card">
+          <div class="facade facade--video facade--wide" data-facade="video"
+               data-src="assets/videos/real_bend1.mp4?v=2"
+               data-fallback="Duck-under video unavailable">
+            <img src="assets/images/real_bend_poster.webp" alt="Humanoid ducking under an obstacle"
+                 width="1280" height="720" loading="lazy" decoding="async"
+                 onerror="this.closest('.facade').classList.add('is-missing')">
+            <button class="facade__play" type="button" aria-label="Play duck-under video">&#9654;</button>
+          </div>
+          <div class="clip-card__meta">
+            <span class="clip-card__title">Duck under</span>
+            <span class="clip-card__duration">0:09</span>
+          </div>
+        </article>
+
+        <article class="clip-card">
+          <div class="facade facade--video facade--wide" data-facade="video"
+               data-src="assets/videos/real_cross1.mp4?v=2"
+               data-fallback="Step-over video unavailable">
+            <img src="assets/images/real_cross_poster.webp" alt="Humanoid stepping over an obstacle"
+                 width="1280" height="720" loading="lazy" decoding="async"
+                 onerror="this.closest('.facade').classList.add('is-missing')">
+            <button class="facade__play" type="button" aria-label="Play step-over video">&#9654;</button>
+          </div>
+          <div class="clip-card__meta">
+            <span class="clip-card__title">Step over</span>
+            <span class="clip-card__duration">0:09</span>
+          </div>
+        </article>
+
+        <article class="clip-card">
+          <div class="facade facade--video facade--wide" data-facade="video"
+               data-src="assets/videos/real_sideways1.mp4?v=2"
+               data-fallback="Sideways-passage video unavailable">
+            <img src="assets/images/real_sideways_poster.webp" alt="Humanoid passing an obstacle sideways"
+                 width="1280" height="720" loading="lazy" decoding="async"
+                 onerror="this.closest('.facade').classList.add('is-missing')">
+            <button class="facade__play" type="button" aria-label="Play sideways-passage video">&#9654;</button>
+          </div>
+          <div class="clip-card__meta">
+            <span class="clip-card__title">Sideways passage</span>
+            <span class="clip-card__duration">0:11</span>
+          </div>
+        </article>
+
+        <article class="clip-card">
+          <div class="facade facade--video facade--wide" data-facade="video"
+               data-src="assets/videos/SingleReal/bend_cross1.mp4?v=2"
+               data-fallback="Combined-skill video I unavailable">
+            <img src="assets/images/single_combined_1_poster.webp"
+                 alt="Humanoid combining duck-under and step-over skills, sequence one"
+                 width="1280" height="720" loading="lazy" decoding="async"
+                 onerror="this.closest('.facade').classList.add('is-missing')">
+            <button class="facade__play" type="button" aria-label="Play combined-skill video one">&#9654;</button>
+          </div>
+          <div class="clip-card__meta">
+            <span class="clip-card__title">Duck + step I</span>
+            <span class="clip-card__duration">0:05</span>
+          </div>
+        </article>
+
+        <article class="clip-card">
+          <div class="facade facade--video facade--wide" data-facade="video"
+               data-src="assets/videos/SingleReal/bend_cross2.mp4?v=2"
+               data-fallback="Combined-skill video II unavailable">
+            <img src="assets/images/single_combined_2_poster.webp"
+                 alt="Humanoid combining duck-under and step-over skills, sequence two"
+                 width="1280" height="720" loading="lazy" decoding="async"
+                 onerror="this.closest('.facade').classList.add('is-missing')">
+            <button class="facade__play" type="button" aria-label="Play combined-skill video two">&#9654;</button>
+          </div>
+          <div class="clip-card__meta">
+            <span class="clip-card__title">Duck + step II</span>
+            <span class="clip-card__duration">0:08</span>
+          </div>
+        </article>
+
+        <article class="clip-card">
+          <div class="facade facade--video facade--wide" data-facade="video"
+               data-src="assets/videos/SingleReal/bend_cross3.mp4?v=2"
+               data-fallback="Combined-skill video III unavailable">
+            <img src="assets/images/single_combined_3_poster.webp"
+                 alt="Humanoid combining duck-under and step-over skills, sequence three"
+                 width="1280" height="720" loading="lazy" decoding="async"
+                 onerror="this.closest('.facade').classList.add('is-missing')">
+            <button class="facade__play" type="button" aria-label="Play combined-skill video three">&#9654;</button>
+          </div>
+          <div class="clip-card__meta">
+            <span class="clip-card__title">Duck + step III</span>
+            <span class="clip-card__duration">0:08</span>
+          </div>
+        </article>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════ Simulation ══════════════════ -->
+  <section id="simulation" class="section">
+    <h2>Simulation</h2>
+
+    <div class="media-group">
+      <div class="media-group__head">
+        <h3 class="subhead">Indoor Scene</h3>
+      </div>
+
+      <div class="video-grid">
+        <article class="clip-card">
+          <div class="facade facade--video facade--wide" data-facade="video"
+               data-src="assets/videos/sim_home_living.mp4?v=2"
+               data-fallback="Indoor living-room simulation unavailable">
+            <img src="assets/images/sim_home_living_poster.webp"
+                 alt="Humanoid traversing a simulated indoor living room"
+                 width="1280" height="960" loading="lazy" decoding="async"
+                 onerror="this.closest('.facade').classList.add('is-missing')">
+            <button class="facade__play" type="button" aria-label="Play living-room simulation">&#9654;</button>
+          </div>
+          <div class="clip-card__meta">
+            <span class="clip-card__title">Living room</span>
+            <span class="clip-card__duration">1:11</span>
+          </div>
+        </article>
+
+        <article class="clip-card">
+          <div class="facade facade--video facade--wide" data-facade="video"
+               data-src="assets/videos/sim_home_stair.mp4?v=2"
+               data-fallback="Indoor stair simulation unavailable">
+            <img src="assets/images/sim_home_stair_poster.webp"
+                 alt="Humanoid ducking through a simulated indoor stair passage"
+                 width="1280" height="720" loading="lazy" decoding="async"
+                 onerror="this.closest('.facade').classList.add('is-missing')">
+            <button class="facade__play" type="button" aria-label="Play stair-passage simulation">&#9654;</button>
+          </div>
+          <div class="clip-card__meta">
+            <span class="clip-card__title">Stair duck-under</span>
+            <span class="clip-card__duration">0:19</span>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="media-group" data-carousel>
+      <div class="media-group__head">
+        <h3 class="subhead">LEGO Rollout</h3>
+        <div class="carousel-nav" aria-label="LEGO Rollout carousel controls">
+          <button type="button" data-carousel-prev aria-label="Scroll LEGO Rollout videos left" disabled>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m12.5 4-6 6 6 6"/></svg>
+          </button>
+          <button type="button" data-carousel-next aria-label="Scroll LEGO Rollout videos right" disabled>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7.5 4 6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="media-rail" data-carousel-track tabindex="0"
+           aria-label="LEGO Rollout videos">
+        <article class="clip-card">
+          <div class="facade facade--video facade--wide" data-facade="video"
+               data-src="assets/videos/Lego_rollout/v2_grid_3x3.mp4?v=2"
+               data-fallback="LEGO grid rollout unavailable">
+            <img src="assets/images/lego_grid_poster.webp"
+                 alt="Nine simultaneous humanoid rollouts across LEGO-style obstacle fields"
+                 width="1280" height="720" loading="lazy" decoding="async"
+                 onerror="this.closest('.facade').classList.add('is-missing')">
+            <button class="facade__play" type="button" aria-label="Play 3 by 3 LEGO rollout">&#9654;</button>
+          </div>
+          <div class="clip-card__meta">
+            <span class="clip-card__title">3 &times; 3 overview</span>
+            <span class="clip-card__duration">0:23</span>
+          </div>
+        </article>
+
+        <article class="clip-card">
+          <div class="facade facade--video facade--wide" data-facade="video"
+               data-src="assets/videos/Lego_rollout/v2_single_easy_1.mp4?v=2"
+               data-fallback="Easy LEGO rollout unavailable">
+            <img src="assets/images/lego_easy_poster.webp"
+                 alt="Humanoid traversing an easy LEGO-style obstacle field"
+                 width="1280" height="720" loading="lazy" decoding="async"
+                 onerror="this.closest('.facade').classList.add('is-missing')">
+            <button class="facade__play" type="button" aria-label="Play easy LEGO rollout">&#9654;</button>
+          </div>
+          <div class="clip-card__meta">
+            <span class="clip-card__title">Easy layout</span>
+            <span class="clip-card__duration">0:16</span>
+          </div>
+        </article>
+
+        <article class="clip-card">
+          <div class="facade facade--video facade--wide" data-facade="video"
+               data-src="assets/videos/Lego_rollout/v2_single_medium_1.mp4?v=2"
+               data-fallback="Medium LEGO rollout unavailable">
+            <img src="assets/images/lego_medium_poster.webp"
+                 alt="Humanoid traversing a medium LEGO-style obstacle field"
+                 width="1280" height="720" loading="lazy" decoding="async"
+                 onerror="this.closest('.facade').classList.add('is-missing')">
+            <button class="facade__play" type="button" aria-label="Play medium LEGO rollout">&#9654;</button>
+          </div>
+          <div class="clip-card__meta">
+            <span class="clip-card__title">Medium layout</span>
+            <span class="clip-card__duration">0:17</span>
+          </div>
+        </article>
+
+        <article class="clip-card">
+          <div class="facade facade--video facade--wide" data-facade="video"
+               data-src="assets/videos/Lego_rollout/v2_single_hard_1.mp4?v=2"
+               data-fallback="Hard LEGO rollout unavailable">
+            <img src="assets/images/lego_hard_poster.webp"
+                 alt="Humanoid traversing a hard LEGO-style obstacle field"
+                 width="1280" height="720" loading="lazy" decoding="async"
+                 onerror="this.closest('.facade').classList.add('is-missing')">
+            <button class="facade__play" type="button" aria-label="Play hard LEGO rollout">&#9654;</button>
+          </div>
+          <div class="clip-card__meta">
+            <span class="clip-card__title">Hard layout</span>
+            <span class="clip-card__duration">0:18</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ BibTeX ══════════════════ -->
+  <section id="bibtex" class="section">
+    <h2>Citation</h2>
+    <!-- TODO: real bibtex once the paper is finalized -->
+    <div class="bibtex">
+      <button class="bibtex__copy" type="button" data-copy="#bibtex-code">Copy</button>
+      <pre tabindex="0" aria-label="BibTeX citation; scroll horizontally to read full lines"><code id="bibtex-code">@inproceedings{ma2026passage,
+  title     = {PASSAGE: Scaling Scene-Aligned Motion Learning for Perceptive Humanoid Traversal in Cluttered Environments},
+  author    = {Yuxuan Ma and Zicheng Zeng and Chunlin Peng and Zhoujian Li and Zetong Zhao and Zhikai Zhang and Yunrui Lian and Han Xue and Sikai Liang and Weiyi Zhu and Mulin Chen and Chenghuai Lin and Jiayu Zeng and Yanwei An and Songan Zhang and Jiayuan Gu and Jilong Wang and Jingbo Wang and He Wang and Li Yi},
+  booktitle = {Conference 2026},
+  year      = {2026}
+}</code></pre>
+    </div>
+  </section>
+
+  <!-- TODO: optional footer (contact / acknowledgment) — add back if needed -->
+
+</main>
+
+<script src="web.js?v=22" defer></script>
+</body>
+</html>

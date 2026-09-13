@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Local source footage; deploy only the optimized media referenced by index.html.
+assets/videos/**/*.[Mm][Oo][Vv]
+assets/videos/datacollection/
+
+# Superseded figure kept locally for reference.
+assets/images/fig_method.webp
+.transcode_out/
+.transcode.sh
+.hfenv/
+
+# The browser demo and model weights are private and must never be published
+# with this static project page.
+demo/
+*.onnx
+*.pt
+*.pth
+*.ckpt
+*.safetensors
