@@ -153,6 +153,15 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 8px 20px -6px rgba(76, 91, 245, 0.45);
 }
+.links .btn[aria-disabled="true"],
+.links .btn[aria-disabled="true"]:hover {
+  background: var(--card);
+  border-color: var(--line);
+  color: var(--ink-faint);
+  transform: none;
+  box-shadow: var(--shadow-sm);
+  cursor: default;
+}
 
 /* ── Sections ────────────────────────────────────────────────────── */
 
