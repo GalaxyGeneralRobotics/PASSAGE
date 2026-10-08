@@ -24,8 +24,9 @@ the rest of the page.
    search `TODO` in `index.html`.
 2. **Links**: arXiv / GitHub buttons in the header `<nav class="links">`;
    delete buttons that do not apply.
-3. **Main video**: `assets/videos/main.mp4` + poster
-   `assets/images/main_poster.jpg`.
+3. **Main video**: `assets/videos/Main/passage_galbot_haiwai_web.mp4` + poster
+   `assets/images/passage_galbot_haiwai_poster.webp`, generated from the local source
+   `assets/videos/Main/passage_galbot_haiwai.mp4`.
 4. **Sub videos**: one facade block per clip; poster in `assets/images/`, clip
    in `assets/videos/`. Only the main video keeps audio.
 5. **Figures**: the method overview is `PASSAGE_publish.webp`; quantitative
@@ -34,8 +35,9 @@ the rest of the page.
    shift while images load.
 ## Deploy
 
-Any static host works (the page is three files + assets). Page media
-(videos/posters) load through jsDelivr — the free public CDN that fronts
+Any static host works (the page is three files + assets). On
+`galaxygeneralrobotics.github.io`, page media (videos/posters) load through
+jsDelivr — the free public CDN that fronts
 GitHub repos (Cloudflare + Fastly edges, ACAO:*, Range). `web.js` probes
 `cdn.jsdelivr.net` and `fastly.jsdelivr.net` at boot with a CORS fetch
 (a 404 — e.g. while the repo is still private — counts as unreachable)
@@ -43,7 +45,7 @@ and rewrites `assets/videos|images` URLs to the fastest healthy
 endpoint, falling back to the same-origin GitHub Pages copies if both
 CDNs are unreachable or slow (>1.5s). Requirements: the repo must be
 public, and no media file may exceed jsDelivr's 20MB per-file cap
-(`main.mp4` is re-encoded to ~18MB for exactly that reason). No extra
+(`passage_galbot_haiwai_web.mp4` is re-encoded to ~18MB for exactly that reason). No extra
 uploads: the CDN reads straight from this repo's `main` branch.
 
 For local preview, use the included server so long videos can seek to content
@@ -55,7 +57,9 @@ cd PASSAGE
 python3 serve.py 8000
 ```
 
-Then open `http://localhost:8000/`. A video range request will receive
+Then open `http://localhost:8000/`. Previews on this or any other host use
+their own media files directly, so unpublished edits cannot be replaced by
+older CDN copies. A video range request will receive
 `206 Partial Content`, matching the behavior expected from a production static
 host.
 

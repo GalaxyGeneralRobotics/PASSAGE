@@ -21,7 +21,7 @@
  * repo is still private — counts as unreachable, unlike a no-cors
  * opaque response) and rewrite every assets/videos|images URL to the
  * fastest healthy endpoint. Constraints honored: jsDelivr serves no
- * file above 20MB, which is why main.mp4 is re-encoded to ~18MB.
+ * file above 20MB, which is why the main video is re-encoded to ~18MB.
  * Unreachable or slow (>1.5s) probes keep the page on same-origin URLs,
  * and any media that errors mid-playback on the CDN reverts to the
  * same-origin copy. (hf-mirror.com was tried and does NOT work: it
@@ -53,6 +53,9 @@ function probeCdnBase(base, timeoutMs = 3500, maxLatencyMs = 1500) {
 }
 
 const cdnReady = (async () => {
+  // Only the published GitHub Pages site uses this repository's CDN.
+  // Previews must serve their own assets, including unpublished edits.
+  if (location.hostname.toLowerCase() !== 'galaxygeneralrobotics.github.io') return '';
   try {
     const results = await Promise.allSettled(ASSET_CDN_BASES.map((b) => probeCdnBase(b)));
     const ok = results.filter((r) => r.status === 'fulfilled').sort((a, b) => a.value.ms - b.value.ms);
@@ -66,7 +69,13 @@ const cdnReady = (async () => {
       img.dataset.localSrc = img.getAttribute('src');
       img.src = toCdn(img.getAttribute('src'));
       img.addEventListener('error', () => {
-        if (img.dataset.localSrc) { img.src = img.dataset.localSrc; delete img.dataset.localSrc; }
+        if (img.dataset.localSrc) {
+          img.addEventListener('load', () => {
+            img.closest('.facade')?.classList.remove('is-missing');
+          }, { once: true });
+          img.src = img.dataset.localSrc;
+          delete img.dataset.localSrc;
+        }
       }, { once: true });
     }
     const alt = window.__ASSET_CDN_ALT;

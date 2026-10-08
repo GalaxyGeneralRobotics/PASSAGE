@@ -82,18 +82,16 @@
 
   <!-- ══════════════════ Main video ══════════════════ -->
   <section id="main-video" class="section">
-    <!-- TODO: hero video — export to assets/videos/main.mp4 (H.264 ≤8Mbps) and
-         a poster frame assets/images/main_poster.webp (~1600px wide, quality 70).
-         Nothing is fetched until the user clicks play. -->
+    <!-- Web-optimized copy of assets/videos/Main/passage_galbot_haiwai.mp4. -->
     <div class="facade facade--video facade--wide"
-         data-facade="video" data-src="assets/videos/main.mp4?v=4"
-         data-fallback="Main video — material pending (assets/videos/main.mp4)">
-      <img src="assets/images/main_poster.webp" alt="Main video poster"
+         data-facade="video" data-src="assets/videos/Main/passage_galbot_haiwai_web.mp4"
+         data-fallback="Main video — material pending (assets/videos/Main/passage_galbot_haiwai_web.mp4)">
+      <img src="assets/images/passage_galbot_haiwai_poster.webp" alt="Main video poster"
            width="1280" height="720" loading="eager" decoding="async"
            fetchpriority="high"
            onerror="this.closest('.facade').classList.add('is-missing')">
       <button class="facade__play" type="button" aria-label="Play video">&#9654;</button>
-      <span class="facade__tag">Main video &middot; 3:00</span>
+      <span class="facade__tag">Main video &middot; 4:09</span>
     </div>
   </section>
 
@@ -511,6 +509,6 @@
 
 </main>
 
-<script src="web.js?v=22" defer></script>
+<script src="web.js?v=23" defer></script>
 </body>
 </html>

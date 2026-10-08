@@ -20,7 +20,8 @@ them same-origin avoids an external font dependency.
 
 - Browser delivery format: H.264 MP4 with `yuv420p` and Fast Start (`moov`
   before `mdat`).
-- Only `main.mp4` keeps audio; every other video is intentionally silent.
+- Only the main video (`Main/passage_galbot_haiwai_web.mp4`) keeps audio;
+  every other video referenced by the page is intentionally silent.
 - Keep every committed file below GitHub's 100 MiB per-file limit.
 - Videos are created only after a visitor clicks their poster, so they do not
   add to the initial page load.
