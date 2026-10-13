@@ -24,11 +24,12 @@ the rest of the page.
    search `TODO` in `index.html`.
 2. **Links**: arXiv / GitHub buttons in the header `<nav class="links">`;
    delete buttons that do not apply.
-3. **Main video**: `assets/videos/Main/passage_galbot_haiwai_web.mp4` + poster
-   `assets/images/passage_galbot_haiwai_poster.webp`, generated from the local source
-   `assets/videos/Main/passage_galbot_haiwai.mp4`.
+3. **Main video**: `assets/videos/main_pub_web.mp4` + poster
+   `assets/images/main_pub_poster.webp`, generated from the local source
+   `assets/videos/main_pub.mp4`.
 4. **Sub videos**: one facade block per clip; poster in `assets/images/`, clip
-   in `assets/videos/`. Only the main video keeps audio.
+   in `assets/videos/`. Only the main video keeps audio. The first Simulation
+   group, Indoor Simulation Rollout, uses `roomrollout.mp4` and its matching poster.
 5. **Figures**: the method overview is `PASSAGE_publish.webp`; quantitative
    figures live under `assets/images/Figs/`. Keep every image's intrinsic
    `width`/`height` attributes matched to the real file so the layout does not
@@ -45,7 +46,7 @@ and rewrites `assets/videos|images` URLs to the fastest healthy
 endpoint, falling back to the same-origin GitHub Pages copies if both
 CDNs are unreachable or slow (>1.5s). Requirements: the repo must be
 public, and no media file may exceed jsDelivr's 20MB per-file cap
-(`passage_galbot_haiwai_web.mp4` is re-encoded to ~18MB for exactly that reason). No extra
+(`main_pub_web.mp4` is re-encoded to ~18MB for exactly that reason). No extra
 uploads: the CDN reads straight from this repo's `main` branch.
 
 For local preview, use the included server so long videos can seek to content
